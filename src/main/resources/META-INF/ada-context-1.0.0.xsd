@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="http://www.ada.com/schema/ada-context"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.ada.com/schema/ada-context"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+
+    <xsd:annotation>
+        <xsd:documentation><![CDATA[ Namespace support for ada cfg Center. ]]></xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:element name="config">
+        <xsd:annotation>
+            <xsd:documentation>
+                <![CDATA[ ada configuration section to integrate with Spring.]]>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:attribute name="files" type="xsd:string" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <![CDATA[
+                            The comma-separated list of namespace names to integrate with Spring property sources.
+                        ]]>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="resources" type="xsd:string" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <![CDATA[
+                            The comma-separated list of namespace names to integrate with Spring property sources.
+                        ]]>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+        
+    </xsd:element>
+</xsd:schema>
