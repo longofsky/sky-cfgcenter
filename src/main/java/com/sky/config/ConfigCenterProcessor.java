@@ -13,7 +13,6 @@ import java.util.*;
  * 
  * @author
  */
-@Component(value = "configProcessor")
 public class ConfigCenterProcessor {
 
 	private static final Logger logger = LoggerFactory

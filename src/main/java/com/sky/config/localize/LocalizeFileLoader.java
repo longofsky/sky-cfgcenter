@@ -1,6 +1,7 @@
 package com.sky.config.localize;
 
 import com.ctrip.framework.apollo.spring.util.BeanRegistrationUtil;
+import com.sky.config.ConfigCenterProcessor;
 import com.sky.config.ResourceConstant;
 import com.sky.config.processor.LocalServerPorpertySourcesProcessor;
 import com.sky.config.processor.context.EnvironmentContextProcessor;
@@ -76,9 +77,8 @@ public class LocalizeFileLoader implements BeanFactoryPostProcessor, Environment
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) {
         logger.info(getClass().getName() + "Here loading class into container");
         //注册后将调用LocalizeFileLoader 实现的BeanFactoryPostProcessor接口
-        BeanRegistrationUtil.registerBeanDefinitionIfNotExists(registry,
-                LocalizeFileLoader.class.getName(), LocalizeFileLoader.class);
-
+        BeanRegistrationUtil.registerBeanDefinitionIfNotExists(registry, LocalizeFileLoader.class.getName(), LocalizeFileLoader.class);
+        BeanRegistrationUtil.registerBeanDefinitionIfNotExists(registry, ConfigCenterProcessor.class.getName(), ConfigCenterProcessor.class);
 
     }
 

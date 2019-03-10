@@ -10,12 +10,12 @@
        http://www.ada.com/schema/ada-context http://www.ada.com/schema/ada-context-1.0.0.xsd
        http://www.springframework.org/schema/beans ">
 
-    <context:component-scan base-package="com.sky.config"></context:component-scan>
-
     <apollo:config order="10"/>
     <apollo:config namespaces="TEST1.apollo,application.yaml" order="11"/>
     <apollo:config namespaces="test-namespace"/>
     <ada-context:config files="config/ada-context-config.properties,ada-context.properties"/>
+
+    <bean id="genericConfig" class="com.sky.config.BaseGenericConfig"/>
 
     <context:annotation-config/>
 

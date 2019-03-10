@@ -12,7 +12,17 @@
 
 1. 引入sky-cfgcenter.jar
 
-2. application-spring.xml加入需要的namespaces，例：
+2. 添加JVM配置
+
+   ```text
+   -Dapp.id=AppId
+   -Denv=DEV
+   -Dfile_config_path=加载环境路径
+   ```
+
+   
+
+3. application-spring.xml加入需要的namespaces，例：
 
    ```xml
    <apollo:config namespaces="test-namespace"/>
@@ -20,7 +30,7 @@
 
    
 
-3. 注入BaseGenericConfig.class
+4. 注入BaseGenericConfig.class
 
    ```java
    @Autowired
@@ -29,7 +39,7 @@
 
    
 
-4. 根据key获取value 例：
+5. 根据key获取value 例：
 
    ```java
    String  value = baseGenericConfig.getProperty("key");
@@ -56,14 +66,6 @@
    String  value = baseGenericConfig.getProperty("key");
    ```
    
-#####添加JVM配置
-```text
-    -Denv=DEV 
-    -Dfile_config_path=
-```
-   
-   
-
 ####配置中心加载顺序
 
 ![](https://github.com/longofsky/documents/blob/master/ADA/picture/ADA%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83%E5%8A%A0%E8%BD%BD%E9%A1%BA%E5%BA%8F.jpg?raw=true)
